@@ -8,8 +8,7 @@
 int main()
 {
     int count;
-    int a, c, set, p;
-    double b;
+    int a, b, c, set, p;
     
     printf("계산할 과목의 수를 입력하세요 : ");
     scanf("%d", &count);
@@ -72,17 +71,18 @@ int main()
         }
         
         else if (a == 13){
-            printf("해당 과목의 점수와 반영비율을 입력하세요 (해당 과목은 절대평가입니다) : ");
-            scanf("%d %d", &b, &p);
+            printf("해당 과목의 점수와 반영점수를 입력하세요 (해당 과목은 절대평가입니다) : ");
+            scanf("%d %d", &b, &p);  
             
-            if (b>=90) printf("A");
-            else if (b>=80) printf("B"); 
-            else if (b>=70) printf("C"); 
-            else if (b>=60) printf("D"); 
-            else if (b>=50) printf("E");
-            else printf("F");
-            
-            printf("반영 비율에 따른 점수 : %.2lf (%.2lf점 감점)", (b%10)*(p/10), p-(b%10)*(p/10));
+            printf("|  반영 비율에 따른 감점 : %d  ",p-(b*p/100));
+            b = 100-(p-(b*p/100));
+
+            if (b>=90) printf("|  등급 : A  |  점수 : %d점\n", b);
+            else if (b>=80) printf("|  등급 : B |  점수 : %d점\n", b); 
+            else if (b>=70) printf("|  등급 : C  |  점수 : %d점\n", b); 
+            else if (b>=60) printf("|  등급 : D  |  점수 : %d점\n", b);
+            else if (b>=50) printf("|  등급 : E  |  점수 : %d점\n", b);
+            else printf("|  등급 : F  |  점수 : %d점\n", b);
         }
         
          
@@ -97,3 +97,4 @@ int main()
         }
     }
 }
+
