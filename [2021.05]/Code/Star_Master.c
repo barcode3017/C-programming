@@ -29,7 +29,24 @@ int main() {
   // a의 줄 수만큼 별 찍기
   printf("\n< 방법 3 > a의 줄 수 만큼 별 찍기\n");
   for(i=0; i<a; i++){
-      for(j=a; j>=a; j--){
+      printf("*");
+      printf("\n");
+  }
+  
+  
+  // 직각삼각형 모양으로 별 찍기
+   printf("\n< 방법 4 > 직각삼각형 모양으로 별 찍기\n");
+  for(i=a; i>0; i--){
+      for(j=a; j>=i; j--){
+          printf("*");
+      }
+      printf("\n");
+  }
+  
+  // 직각삼각형 모양에서 반대로 별 찍기
+   printf("\n< 방법 5 > 직각삼각형 모양 반대로 별 찍기\n");
+  for(i=a; i>0; i--){
+      for(j=1; j<=i; j++){
           printf("*");
       }
       printf("\n");
